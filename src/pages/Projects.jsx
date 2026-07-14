@@ -107,7 +107,7 @@ function Projects() {
   var videoRef = useRef(null);
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-[70vh] md:min-h-screen">
       <video
         ref={videoRef}
         className="projects-bg-video"
@@ -127,11 +127,11 @@ function Projects() {
 
       <div
         className={
-          "relative min-h-screen projects-content" +
+          "relative min-h[70vh] md:min-h-screen projects-content" +
           (videoEnded ? " projects-content-visible" : "")
         }
       >
-        <h1 className="font-orbitron font-black text-4xl md:text-5xl text-center text-glow pt-16">
+        <h1 className="font-orbitron font-black text-4xl md:text-5xl text-center text-glow pt-32 md:pt-16">
           Projects
         </h1>
 
