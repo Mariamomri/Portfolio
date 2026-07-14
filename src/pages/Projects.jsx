@@ -115,6 +115,7 @@ function Projects() {
         autoPlay
         muted
         playsInline
+        preload="auto"
         onLoadedMetadata={function () {
           if (videoRef.current) {
             videoRef.current.playbackRate = 3.5;

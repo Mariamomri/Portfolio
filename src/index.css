@@ -408,6 +408,11 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.contact-title-letter {
+  display: inline-block;
+  white-space: pre;
+}
+
 @media (max-width: 480px) {
   .contact-panel {
     padding: 30px 22px;
