@@ -1,0 +1,94 @@
+.experience-page {
+  position: relative;
+  z-index: 2;
+  padding: 90px 20px 0;
+  pointer-events: none;
+}
+
+.hud-panel {
+  width: 340px;
+  pointer-events: auto;
+  background: rgba(10, 10, 20, 0.85);
+  border: 1.5px solid rgba(168, 85, 247, 0.45);
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.25);
+  user-select: none;
+}
+
+.hud-panel.work {
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 0 22px rgba(34, 211, 238, 0.25);
+}
+
+.hud-panel-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  font-size: 1rem;
+}
+
+.hud-panel.work .hud-panel-icon {
+  background: rgba(34, 211, 238, 0.15);
+  color: #67e8f9;
+}
+
+.hud-panel-period {
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
+}
+
+.hud-panel-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+  margin-bottom: 3px;
+}
+
+.hud-panel-place {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 10px;
+}
+
+.hud-panel-description {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 640px) {
+  .experience-page {
+    padding: 80px 12px 0;
+  }
+
+  .hud-panel {
+    width: 230px;
+    padding: 12px 14px;
+  }
+
+  .hud-panel-icon {
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+  }
+
+  .hud-panel-title {
+    font-size: 1rem;
+  }
+
+  .hud-panel-place,
+  .hud-panel-description {
+    font-size: 0.72rem;
+  }
+}

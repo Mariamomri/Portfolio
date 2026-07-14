@@ -1,0 +1,114 @@
+@reference "tailwindcss";
+
+.nav-link {
+  @apply relative text-sm font-medium text-white hover:text-purple-400 transition-colors m-4;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: #a855f7;
+  box-shadow: 0 0 8px #a855f7, 0 0 14px #a855f7;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active {
+  @apply text-purple-400;
+}
+
+.logo-mark {
+  width: 100px;
+  height: 50px;
+  object-fit: cover;
+  filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.7));
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.logo:hover .logo-mark {
+  transform: scale(1.1);
+}
+
+.music-toggle {
+  @apply inline-flex items-center justify-center w-8 h-8 rounded-full ml-2 text-sm text-white/70 border border-white/15 bg-white/5 hover:text-white hover:border-purple-400/60 hover:bg-purple-500/20 transition-colors;
+}
+
+.header {
+  @apply fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4;
+}
+
+.header nav {
+  @apply flex items-center;
+}
+
+.nav-burger {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .nav-burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 1rem;
+  }
+
+  .header nav {
+    position: fixed;
+    top: 64px;
+    right: 16px;
+    left: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    background: rgba(8, 8, 20, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  .header nav.nav-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-link {
+    margin: 8px 0;
+  }
+
+  .music-toggle {
+    align-self: flex-start;
+    margin: 8px 0 0;
+  }
+}
+
+.logo {
+  @apply font-black text-xl tracking-widest text-purple-500 hover:text-purple-400 transition-colors
+}
