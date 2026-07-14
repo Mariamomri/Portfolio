@@ -10,6 +10,7 @@ var FLIGHT_DURATION = 8;
 
 function Languages() {
   var nodeRefs = useRef([]);
+  var nodeRefsMobile = useRef([]);
 
   useEffect(function () {
     var ctx = gsap.context(function () {
@@ -24,6 +25,18 @@ function Languages() {
         stagger: FLIGHT_DURATION / LANGUAGES.length,
         ease: "power2.out",
       });
+      gsap.set(nodeRefsMobile.current, {
+        opacity: 0,
+        y: 16,
+      });
+      gsap.to(nodeRefsMobile.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.25,
+        ease: "power2.out",
+        delay: 0.3,
+      });
     });
     return function () {
       ctx.revert();
@@ -36,6 +49,21 @@ function Languages() {
       <div className="languages-page">
         <div className="languages-globe-wrap">
           <img src={earthImg} alt="Earth" className="languages-globe" />
+          <div className="language-stack">
+            {LANGUAGES.map(function (name, i) {
+              return (
+                <div
+                  key={name}
+                  ref={function (el) {
+                    nodeRefsMobile.current[i] = el;
+                  }}
+                  className="language-node font-orbitron"
+                >
+                  {name}
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="language-track">
