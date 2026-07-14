@@ -110,8 +110,13 @@
   white-space: nowrap;
 }
 
+.ship-hotspots-mobile {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .home-page {
+    min-height: auto;
     padding: 20px 4vw 30px;
   }
 
@@ -121,10 +126,42 @@
   }
 
   .ship-wrap {
-    margin-top: 70px;
+    margin-top: 110px;
   }
 
-  .ship-hotspot-label {
+  .ship-hotspot {
+    display: none;
+  }
+
+  .ship-hotspots-mobile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 12px;
+    width: 100%;
+    max-width: 340px;
+    margin: 26px auto 0;
+  }
+
+  .ship-hotspot-m {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+
+  .ship-hotspots-mobile .ship-hotspot-ring {
+    width: 52px;
+    height: 52px;
+  }
+
+  .ship-hotspots-mobile .ship-hotspot-label {
     font-size: 0.55rem;
+  }
+
+  .home-cv-btn {
+    position: static;
+    margin-top: 20px;
+
   }
 }

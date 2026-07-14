@@ -68,6 +68,22 @@ function Home() {
             );
           })}
         </div>
+
+        <div className="ship-hotspots-mobile">
+          {HOTSPOTS.map(function (spot) {
+            return (
+              <Link key={spot.label} to={spot.to} className="ship-hotspot-m">
+                <span className="ship-hotspot-ring">
+                  <img src={spot.img} alt={spot.label} />
+                </span>
+                <span className="ship-hotspot-label font-orbitron">
+                  {spot.label}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+        
         <Button href="/Mariam Omri.pdf" download className="home-cv-btn">
           Download CV
         </Button>
