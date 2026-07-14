@@ -135,11 +135,10 @@ function Contact() {
           <p className="text-gray-300 max-w-xl" ref={paraRef}>
             I am currently completing my Full-Stack Web Developer training and
             am looking for an internship starting on{" "}
-            <strong>November 9, 2026</strong>. <br />
-            If you're looking for a motivated and curious developer who is eager
-            to learn and contribute to real-world projects, I would be happy to
-            connect. <br />
-            Please feel free to get in touch!
+            <strong>November 9, 2026</strong>. If you're looking for a motivated
+            and curious developer who is eager to learn and contribute to
+            real-world projects, I would be happy to connect. Please feel free
+            to get in touch!
           </p>
 
           <div className="contact-location" ref={locRef}>
