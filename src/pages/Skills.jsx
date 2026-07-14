@@ -418,27 +418,6 @@ export default function Skills() {
           )}
         </div>
       </div>
-
-      <div className="skills-mobile-list">
-        {planets.map((p) => (
-          <div
-            className="card"
-            key={p.name}
-            style={{ borderColor: `${p.color}55` }}
-          >
-            <p.Icon style={{ color: p.color }} />
-            <div className="info">
-              <span className="name">{p.name}</span>
-              <div className="bar-track">
-                <div
-                  className="bar-fill"
-                  style={{ width: `${p.level}%`, background: p.color }}
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 }
