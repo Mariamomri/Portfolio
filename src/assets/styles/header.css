@@ -31,8 +31,8 @@
 }
 
 .logo-mark {
-  width: 100px;
-  height: 50px;
+  width: 200px;
+  height: 80px;
   object-fit: cover;
   filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.7));
   cursor: pointer;
