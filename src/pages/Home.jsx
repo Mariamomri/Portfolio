@@ -83,8 +83,8 @@ function Home() {
             );
           })}
         </div>
-        
-        <Button href="/Mariam Omri.pdf" download className="home-cv-btn">
+
+        <Button href="/Mariam Omri CV EN.pdf" download className="home-cv-btn">
           Download CV
         </Button>
       </div>

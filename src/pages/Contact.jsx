@@ -11,7 +11,7 @@ var links = [
   {
     icon: FaEnvelope,
     label: "Email",
-    href: "mailto:codegirlbxl@gmail.com",
+    href: "mailto:mariamomri.dev@gmail.com",
   },
   {
     icon: FaGithub,

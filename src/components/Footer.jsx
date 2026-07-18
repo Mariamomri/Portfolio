@@ -18,7 +18,7 @@ function Footer() {
         >
           <i className="fa-brands fa-linkedin"></i>
         </a>
-        <a href="mailto:codegirlbxl@gmail.com">
+        <a href="mailto:mariamomri.dev@gmail.com">
           <i className="fa-solid fa-envelope"></i>
         </a>
       </div>
