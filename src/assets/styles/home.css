@@ -125,6 +125,7 @@
   .home-page {
     min-height: auto;
     padding: 20px 4vw 30px;
+    margin-bottom: 20px;
   }
 
   .home-cv-btn {
@@ -137,7 +138,6 @@
   .home-cv-btn-2 {
     top: 600px;
     left: 27vw;
-    margin-bottom: 20px;
   }
 
   .ship-wrap {
