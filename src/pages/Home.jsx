@@ -68,7 +68,6 @@ function Home() {
             );
           })}
         </div>
-
         <div className="ship-hotspots-mobile">
           {HOTSPOTS.map(function (spot) {
             return (
@@ -83,9 +82,17 @@ function Home() {
             );
           })}
         </div>
-
         <Button href="/Mariam Omri CV EN.pdf" download className="home-cv-btn">
-          Download CV
+          Download CV EN
+        </Button>{" "}
+      </div>
+      <div>
+        <Button
+          href="/Mariam Omri CV FR.pdf"
+          download
+          className="home-cv-btn-2"
+        >
+          Download CV FR
         </Button>
       </div>
     </div>
