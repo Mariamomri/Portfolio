@@ -116,15 +116,16 @@ function Projects() {
         muted
         playsInline
         preload="auto"
-        onLoadedMetadata={function () {
-          if (videoRef.current) {
-            videoRef.current.playbackRate = 3.5;
-          }
+        onLoadedMetadata={function (e) {
+          e.target.playbackRate = 3.5;
         }}
         onEnded={function () {
           setVideoEnded(true);
         }}
-      />
+      >
+        <source src="/video/roomspace.mp4" type="video/mp4" />
+        Ton navigateur ne supporte pas la vidéo HTML5.
+      </video>
 
       <div
         className={
