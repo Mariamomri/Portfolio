@@ -83,7 +83,7 @@
   max-width: 600px;
   aspect-ratio: 1 / 1;
   margin: 10px auto 10px;
-  overflow: hidden;
+  overflow: visible;
   contain: layout;
   flex-shrink: 0;
 }

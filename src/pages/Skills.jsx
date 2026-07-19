@@ -16,6 +16,7 @@ import {
   SiJson,
   SiMysql,
   SiPhpmyadmin,
+  SiPostman,
   SiFigma,
   SiGit,
   SiGithub,
@@ -41,16 +42,16 @@ const CATEGORIES = [
     radius: 48,
     labelAngle: -95,
     skills: [
-      { name: "HTML5", level: 95, Icon: SiHtml5 },
-      { name: "CSS3", level: 95, Icon: SiCss },
-      { name: "JavaScript", level: 92, Icon: SiJavascript },
-      { name: "React", level: 88, Icon: SiReact },
-      { name: "TypeScript", level: 78, Icon: SiTypescript },
-      { name: "Angular", level: 72, Icon: SiAngular },
-      { name: "Tailwind CSS", level: 90, Icon: SiTailwindcss },
-      { name: "Bootstrap", level: 85, Icon: SiBootstrap },
-      { name: "SASS", level: 75, Icon: SiSass },
-      { name: "WordPress", level: 82, Icon: SiWordpress },
+      { name: "HTML5", Icon: SiHtml5 },
+      { name: "CSS3", Icon: SiCss },
+      { name: "JavaScript", Icon: SiJavascript },
+      { name: "React", Icon: SiReact },
+      { name: "TypeScript", Icon: SiTypescript },
+      { name: "Angular", Icon: SiAngular },
+      { name: "Tailwind CSS", Icon: SiTailwindcss },
+      { name: "Bootstrap", Icon: SiBootstrap },
+      { name: "SASS", Icon: SiSass },
+      { name: "WordPress", Icon: SiWordpress },
     ],
   },
   {
@@ -59,11 +60,11 @@ const CATEGORIES = [
     radius: 42.7,
     labelAngle: 5,
     skills: [
-      { name: "Git", level: 90, Icon: SiGit },
-      { name: "GitHub", level: 90, Icon: SiGithub },
-      { name: "Linux", level: 65, Icon: SiLinux },
-      { name: "Trello", level: 80, Icon: SiTrello },
-      { name: "Bash", level: 60, Icon: SiGnubash },
+      { name: "Git", Icon: SiGit },
+      { name: "GitHub", Icon: SiGithub },
+      { name: "Linux", Icon: SiLinux },
+      { name: "Trello", Icon: SiTrello },
+      { name: "Bash", Icon: SiGnubash },
     ],
   },
   {
@@ -72,10 +73,11 @@ const CATEGORIES = [
     radius: 37.3,
     labelAngle: 190,
     skills: [
-      { name: "PHP", level: 85, Icon: SiPhp },
-      { name: "Symfony", level: 80, Icon: SiSymfony },
-      { name: "JSON", level: 90, Icon: SiJson },
-      { name: "API REST", level: 82, Icon: FaNetworkWired },
+      { name: "PHP", Icon: SiPhp },
+      { name: "Symfony", Icon: SiSymfony },
+      { name: "JSON", Icon: SiJson },
+      { name: "API REST", Icon: FaNetworkWired },
+      { name: "Postman", Icon: SiPostman },
     ],
   },
   {
@@ -84,8 +86,8 @@ const CATEGORIES = [
     radius: 32,
     labelAngle: 100,
     skills: [
-      { name: "MySQL", level: 85, Icon: SiMysql },
-      { name: "PHPMyAdmin", level: 85, Icon: SiPhpmyadmin },
+      { name: "MySQL", Icon: SiMysql },
+      { name: "PHPMyAdmin", Icon: SiPhpmyadmin },
     ],
   },
   {
@@ -94,9 +96,9 @@ const CATEGORIES = [
     radius: 26.7,
     labelAngle: -60,
     skills: [
-      { name: "Figma", level: 65, Icon: SiFigma },
-      { name: "SEO", level: 60, Icon: FaSearch },
-      { name: "UX/UI", level: 65, Icon: FaPencilRuler },
+      { name: "Figma", Icon: SiFigma },
+      { name: "SEO", Icon: FaSearch },
+      { name: "UX/UI", Icon: FaPencilRuler },
     ],
   },
   {
@@ -105,8 +107,8 @@ const CATEGORIES = [
     radius: 21.3,
     labelAngle: 260,
     skills: [
-      { name: "MERISE", level: 75, Icon: FaSitemap },
-      { name: "UML", level: 70, Icon: SiUml },
+      { name: "MERISE", Icon: FaSitemap },
+      { name: "UML", Icon: SiUml },
       { name: "Draw.io", Icon: SiDiagramsdotnet },
     ],
   },
@@ -115,7 +117,7 @@ const CATEGORIES = [
     color: "#94a3b8",
     radius: 16,
     labelAngle: 150,
-    skills: [{ name: "MS Office", level: 90, Icon: FaBriefcase }],
+    skills: [{ name: "MS Office", Icon: FaBriefcase }],
   },
 ];
 
@@ -125,16 +127,7 @@ CATEGORIES.forEach((cat) => {
   cat.duration = TMAX * Math.pow(cat.radius / MAX_RADIUS, 1.5);
 });
 
-function sizeForLevel(level) {
-  return 26 + (level / 100) * 24;
-}
-
-function statusForLevel(level) {
-  if (level >= 85)
-    return { label: "Mastered", tag: "STATUS: ONLINE // STABLE" };
-  if (level >= 60) return { label: "In progress", tag: "STATUS: SYNCING" };
-  return { label: "Research", tag: "STATUS: EXPERIMENTAL" };
-}
+const PLANET_SIZE = 38;
 
 function hexToRgba(hex, alpha) {
   const h = hex.replace("#", "");
@@ -326,7 +319,6 @@ export default function Skills() {
   const hoveredData = hovered
     ? planets.find((p) => p.name === hovered.skill)
     : null;
-  const hoveredStatus = hoveredData ? statusForLevel(hoveredData.level) : null;
 
   return (
     <div className="skills-page">
@@ -357,7 +349,7 @@ export default function Skills() {
           <canvas ref={canvasRef} className="galaxy-canvas" />
 
           {planets.map((p, i) => {
-            const size = sizeForLevel(p.level);
+            const size = PLANET_SIZE;
             const isActive = hovered?.skill === p.name;
             return (
               <div
@@ -401,19 +393,7 @@ export default function Skills() {
                 </div>
                 <span className="name">{hovered.skill}</span>
               </div>
-              <div className="meta">
-                {hoveredData.level}% — {hoveredStatus.label}
-              </div>
-              <div className="bar-track">
-                <div
-                  className="bar-fill"
-                  style={{
-                    width: `${hoveredData.level}%`,
-                    background: hovered.color,
-                  }}
-                />
-              </div>
-              <div className="status-tag">{hoveredStatus.tag}</div>
+              <div className="meta">{hovered.category}</div>
             </div>
           )}
         </div>
