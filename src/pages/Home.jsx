@@ -82,18 +82,30 @@ function Home() {
             );
           })}
         </div>
-        <Button href="/Mariam Omri CV EN.pdf" download className="home-cv-btn">
-          Download CV EN
-        </Button>{" "}
-      </div>
-      <div>
-        <Button
-          href="/Mariam Omri CV FR.pdf"
-          download
-          className="home-cv-btn-2"
-        >
-          Download CV FR
-        </Button>
+
+        <div className="home-cv-buttons">
+          <Button
+            href="/Mariam-Omri-CV-EN.pdf"
+            download
+            className="home-cv-btn"
+          >
+            Download CV EN
+          </Button>{" "}
+          <Button
+            href="/Mariam-Omri-CV-FR.pdf"
+            download
+            className="home-cv-btn-2"
+          >
+            Download CV FR
+          </Button>
+          <Button
+            href="/Mariam-Omri-CV-NL.pdf"
+            download
+            className="home-cv-btn-3"
+          >
+            Download CV NL
+          </Button>
+        </div>
       </div>
     </div>
   );

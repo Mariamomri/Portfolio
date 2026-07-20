@@ -13,6 +13,7 @@ import Languages from "./pages/Languages";
 import Contact from "./pages/Contact";
 import Stelle from "./components/Stelle";
 import Footer from "./components/Footer";
+import Cursor from "./components/Cursor";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <div className="flex flex-col min-h-screen">
+        <Cursor />
         <Header />
         <Stelle />
         <main className="flex-1">
